@@ -2,8 +2,8 @@ class Solution {
 public:
     string addBinary(string a, string b) {
         string result = "";
-        int m = a.size() - 1;
-        int n = b.size() - 1;
+        int m = a.length() - 1;
+        int n = b.length() - 1;
         int carry = 0;
 
         while (m >= 0 || n >= 0 || carry) {
