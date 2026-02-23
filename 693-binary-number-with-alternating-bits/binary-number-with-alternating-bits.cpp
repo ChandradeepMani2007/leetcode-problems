@@ -1,18 +1,12 @@
 class Solution {
 public:
     bool hasAlternatingBits(int n) {
-        int prev = n & 1; // Last bit
-        n >>= 1;
-
-        while (n > 0) {
-            int curr = n & 1;
-            if (curr == prev) {
+        bitset<32> b(n);
+        int bits = log2(n);
+        for (int i = 0; i <= bits; i++) {
+            if (b[i] == b[i + 1])
                 return false;
-            }
-            prev = curr;
-            n >>= 1;
         }
-
         return true;
     }
 };
