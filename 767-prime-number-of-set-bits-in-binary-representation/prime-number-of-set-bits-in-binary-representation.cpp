@@ -6,7 +6,7 @@ public:
         for (int num = left; num <= right; num++) {
             int setBits = __builtin_popcount(num);
             if (primes.count(setBits))
-                result++;
+                result += 1;
         }
         return result;
     }
