@@ -1,16 +1,7 @@
 class Solution {
 public:
     int minPartitions(string n) {
-       int maxDigit = 0;
-        
-        for(char c : n) {
-            maxDigit = max(maxDigit, c - '0');
-            
-            // Early exit optimization
-            if(maxDigit == 9)
-                return 9;
-        }
-        
-        return maxDigit; 
+        char maxCh = *max_element(begin(n), end(n));
+        return maxCh - '0';
     }
 };
