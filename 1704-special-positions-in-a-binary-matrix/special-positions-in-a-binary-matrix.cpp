@@ -1,32 +1,32 @@
 class Solution {
 public:
     int numSpecial(vector<vector<int>>& mat) {
-      int m = mat.size();
+        int result = 0;
+        int m = mat.size();
         int n = mat[0].size();
-        
-        vector<int> row(m, 0), col(n, 0);
-        
-        // Count 1s in rows and columns
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-                if (mat[i][j] == 1) {
-                    row[i]++;
-                    col[j]++;
+        for (int row = 0; row < m; row++) {
+            for (int col = 0; col < n; col++) {
+                if (mat[row][col] == 0)
+                    continue;
+                // check column
+                bool special = true;
+                for (int r = 0; r < m; r++) {
+                    if (r != row && mat[r][col] == 1) {
+                        special = false;
+                        break;
+                    }
+                }
+                for (int c = 0; c < n; c++) {
+                    if (c != col && mat[row][c] == 1) {
+                        special = false;
+                        break;
+                    }
+                }
+                if (special == true) {
+                    result++;
                 }
             }
         }
-        
-        int count = 0;
-        
-        // Check special positions
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-                if (mat[i][j] == 1 && row[i] == 1 && col[j] == 1) {
-                    count++;
-                }
-            }
-        }
-        
-        return count;  
+        return result;
     }
 };
