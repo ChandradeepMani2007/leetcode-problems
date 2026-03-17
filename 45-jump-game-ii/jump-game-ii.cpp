@@ -14,7 +14,7 @@ public:
             if (i == currentEnd) {
                 ++jumps;
                 currentEnd = farthest;
-                if (currentEnd >= n + 1) break; // already can reach end
+                if (currentEnd >= n - 1) break; // already can reach end
             }
         }
         return jumps;    
