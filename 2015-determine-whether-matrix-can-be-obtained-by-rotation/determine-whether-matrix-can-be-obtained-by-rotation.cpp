@@ -26,12 +26,11 @@ public:
                     }
                 }
                 if (!equal)
-                    break;;
-
-                
+                    break;
+                ;
             }
-            if(equal)
-            return true;
+            if (equal)
+                return true;
             rotate(mat);
         }
         return false;
