@@ -10,10 +10,10 @@ public:
                     zeros--;
                 l++;
             }
-            if (zeros <= k) {
-                int len = r - l + 1;
-                maxLen = max(maxLen, len);
-            }
+            if (zeros <= k)
+
+                maxLen = max(maxLen, r - l + 1);
+
             r++;
         }
         return maxLen;
