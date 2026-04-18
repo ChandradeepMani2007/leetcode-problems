@@ -1,13 +1,9 @@
 class Solution {
 public:
-    int getReverse(int n) {
-        int result = 0;
-        while (n) {
-            int lastDigit = n % 10;
-            result = (result * 10) + lastDigit;
-            n = n / 10;
-        }
-        return result;
+    int mirrorDistance(int n) {
+        string s = to_string(n);
+        reverse(begin(s), end(s));
+        int revInteger = stoi(s);
+        return abs(n - revInteger);
     }
-    int mirrorDistance(int n) { return abs(n - getReverse(n)); }
 };
