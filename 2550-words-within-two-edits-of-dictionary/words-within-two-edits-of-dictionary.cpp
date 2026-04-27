@@ -4,19 +4,19 @@ public:
                                 vector<string>& dictionary) {
         vector<string> result;
 
-        for (string& q : queries) {
-            for (string& d : dictionary) {
+        for (string& query : queries) {
+            for (string& s : dictionary) {
                 int diff = 0;
 
-                for (int i = 0; i < q.size(); i++) {
-                    if (q[i] != d[i])
+                for (int i = 0; i < query.size(); i++) {
+                    if (query[i] != s[i])
                         diff++;
                     if (diff > 2)
                         break;
                 }
 
                 if (diff <= 2) {
-                    result.push_back(q);
+                    result.push_back(query);
                     break;
                 }
             }
