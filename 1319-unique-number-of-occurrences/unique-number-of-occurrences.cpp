@@ -6,7 +6,7 @@ public:
             vec[x + 1000]++;
         }
         sort(begin(vec), end(vec));
-        for (int i = 0; i < 2001; i++) {
+        for (int i = 1; i < 2001; i++) {
             if (vec[i] != 0 && vec[i] == vec[i - 1])
                 return false;
         }
