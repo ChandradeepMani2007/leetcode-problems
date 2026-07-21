@@ -1,17 +1,15 @@
 class Solution {
 public:
-    string defangIPaddr(string address) {
+    string defangIPaddr(string character) {
 
         string ans = "";
-
-        for (char ch : address) {
-            if (ch == '.') {
-                ans += "[.]";
+        for(char ch : character) {
+            if(ch == '.') {
+                ans +="[.]";
             } else {
                 ans += ch;
             }
         }
-
         return ans;
     }
 };
