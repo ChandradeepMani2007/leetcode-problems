@@ -4,23 +4,22 @@ public:
         sort(ransomNote.begin(), ransomNote.end());
         sort(magazine.begin(), magazine.end());
 
+        int m = ransomNote.length();
+        int n = magazine.length();
+
         int i = 0; // ransomNote pointer
         int j = 0; // magazine pointer
 
-        while (i < ransomNote.size() && j < magazine.size()) {
+        while (i < m && j < n) {
             if (ransomNote[i] == magazine[j]) {
                 i++;
                 j++;
-            }
-            else if (ransomNote[i] > magazine[j]) {
+            } else if (ransomNote[i] > magazine[j]) {
                 j++;
-            }
-            else {
-                // ransomNote[i] < magazine[j]
+            } else {
                 return false;
             }
         }
-
-        return i == ransomNote.size();
+        return i == m;
     }
 };
