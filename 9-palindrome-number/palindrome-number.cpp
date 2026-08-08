@@ -1,7 +1,7 @@
 class Solution {
 public:
     bool isPalindrome(int x) {
-       if (x < 0 || (x % 10 == 0 && x != 0)) {
+        if (x < 0 || (x % 10 == 0 && x != 0)) {
             return false;
         }
 
@@ -16,6 +16,5 @@ public:
         // For even length: x == reversedHalf
         // For odd length: x == reversedHalf / 10
         return (x == reversedHalf || x == reversedHalf / 10);
-    } 
-    
+    }
 };
